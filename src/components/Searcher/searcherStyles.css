@@ -1,0 +1,28 @@
+.searcher-spacing-top {
+    padding-top: 1.3rem;
+}
+
+.searcher-style {
+    width: 30%;
+    height: 2rem;
+    padding-left: .7rem;
+    padding-right: .7rem;
+    border-radius: var(--main-border-radius);
+    border: none;
+}
+
+.searcher-style:focus-visible {
+    outline: 0;
+}
+
+.searcher-submit-style {
+    width: 7%;
+    height: 2rem;
+    margin-left: .8rem;
+    padding-left: .7rem;
+    padding-right: .7rem;
+    border-radius: var(--main-border-radius);
+    border: none;
+    color: var(--main-text-color);
+    background: linear-gradient(to right, #00d4ff, #000d6c);
+}
