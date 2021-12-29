@@ -16,7 +16,7 @@
 }
 
 body {
-    width: 100%;
+    width: 95%;
     height: 100vh;
     background-color: var(--bg-color);
     color: var(--main-text-color);
