@@ -4,7 +4,7 @@ export const globalState = {
     base_url: 'https://api.openweathermap.org/data/2.5/weather?',
     location: null,
     degreeScale: 'metric', 
-    weatherInfo: null
+    weatherInfo: false
 }
 
 

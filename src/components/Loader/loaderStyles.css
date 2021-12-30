@@ -1,0 +1,10 @@
+.loader-container-styles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+}
+
+.loader-styles {
+    font-size: 6rem;
+}
