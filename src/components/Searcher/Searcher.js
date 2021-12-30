@@ -11,6 +11,7 @@ function Searcher() {
     const base_url = value.state.base_url;
     const access_token = value.state.access_token;
     const location = state.location;
+    const degreeScale = state.degreeScale;
     return(
         <div className="row">
             <div className="col">
@@ -38,9 +39,13 @@ function Searcher() {
             location: e.target.value
         });
     }
+    // Why is setState not working??
     function handleRequest() {
-        axios(`${base_url}q=${location}&cnt=6&appid=${access_token}&units=metric`)
-        .then(response => console.log(response));
+        axios(`${base_url}q=${location}&appid=${access_token}&units=${degreeScale}`)
+        .then(response => setState({
+            ...state,
+            weatherInfo: response.data
+        }));
     }
 }
 

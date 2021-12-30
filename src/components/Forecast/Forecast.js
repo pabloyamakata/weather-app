@@ -4,9 +4,7 @@ import './forecastStyles.css';
 function Forecast() {
     return(
         <div>
-            <div>
-                hola
-            </div>
+            <p>hola</p>
         </div>
     )
 }
