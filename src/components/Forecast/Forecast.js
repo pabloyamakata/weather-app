@@ -8,8 +8,9 @@ function Forecast() {
     const state = value.state; 
     const weatherInfo = state.weatherInfo;
     const isLoading = state.isLoading;
+    const errorFound = value.state.errorFound;
     return(
-        weatherInfo && !isLoading ? 
+        weatherInfo && !isLoading && !errorFound ? 
         
         <div className="row">
             <div className="col">

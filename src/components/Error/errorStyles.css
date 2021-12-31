@@ -1,0 +1,10 @@
+.error-container-styles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+}
+
+.error-styles {
+    color: red;
+}
