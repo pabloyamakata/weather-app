@@ -15,7 +15,7 @@ function Searcher() {
     const degreeScale = state.degreeScale;
     
     // This function sets isLoading property to false and deactivates 
-    // the loader after the request to openweathermap API has been made.
+    // the loader after the request to openweathermap API has been successful.
     
     useEffect(() => {
         setState({
@@ -46,7 +46,7 @@ function Searcher() {
     
     // METHODS
 
-    // It changes the location property on globalState.js 
+    // handleSearch() changes the location property on globalState.js 
     // and is triggered when user types each letter of the wanted location on input.
     
     function handleSearch(e) {
@@ -56,10 +56,13 @@ function Searcher() {
         });
     }
     
-    // It sends a GET request to openweathermap API and sets the 
-    // weatherInfo property on globalState.js. It is triggered when user submits the form,
-    // either clicking the submit button or pressing the enter key.
-    // This function also sets isLoading property to true and activates the loader.
+    // handleRequest() sets isLoading property to true and activates the loader.
+    // Then, sends a GET request to openweathermap API and sets the 
+    // errorFound property to false and also, modifies the weatherInfo property on globalState.js.
+    // In case of error, isLoading property is set to false and errorFound property 
+    // is set to true. Function is triggered when user submits the form, either clicking
+    // the submit button or pressing the enter key.
+    
     
     function handleRequest(e) {
         e.preventDefault();
