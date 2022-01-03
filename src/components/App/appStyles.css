@@ -1,0 +1,44 @@
+/* 
+
+   Linear gradient transitions are not supported by browsers yet (2021). So it's not
+   possible to make a transition between two background images that also have linear 
+   gradient property applied. The aforementioned property doesn't allow this to happen.
+   In order to solve this issue, an 'after' element was created to function as 
+   a background overlay. This 'after' is used to position a block on top of the
+   background image. Instructions to solve this problem were found in Stackoverflow: 
+   
+   https://stackoverflow.com/questions/17134929/overlay-a-background-image-with-an-rgba-background-color 
+   
+*/
+
+#main-container {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+#main-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--background-filter);
+    z-index: -1;
+}
+
+.container-dimensions {
+    min-height: 100vh;
+}
+
+.app-cold {
+    background-image: var(--cold-bg-image);
+    background-size: cover;
+    background-position: bottom;
+    transition: .4s ease-out;
+}
+
+.app-warm {
+    background-image: var(--warm-bg-image);
+}

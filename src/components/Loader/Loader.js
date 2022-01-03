@@ -9,7 +9,7 @@ function Loader() {
     return(
         isLoading ? <div className="row">
                         <div className="col loader-container-styles">
-                            <i className="far fa-snowflake fa-spin loader-styles"></i> 
+                            <i className="fas fa-spinner fa-pulse loader-styles"></i>
                         </div>
                     </div> : null
     )

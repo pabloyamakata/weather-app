@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 8rem;
+    padding-top: 9rem;
 }
 
 .loader-styles {
+    color: var(--main-text-color);
     font-size: 6rem;
 }

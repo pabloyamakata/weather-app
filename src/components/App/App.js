@@ -3,6 +3,7 @@ import { useState, createContext } from "react";
 import { globalState } from "../../globalState";
 import Header from '../Header/Header';
 import Page from "../Page/Page";
+import './appStyles.css';
 
 export const AppContext = createContext(null);
 
@@ -11,7 +12,7 @@ function App() {
 
     return(
         <AppContext.Provider value={{state, setState}}>
-            <div className={renderBackground()}>
+            <div id="main-container" className={renderBackground()}>
                 <Header />
                 <Page />
             </div>
@@ -20,15 +21,14 @@ function App() {
 
     // METHODS
 
-    // renderBackground() changes the background image based on temperature.
+    // renderBackground() returns a className and sets the 
+    // background image based on temperature.
 
     function renderBackground() {
         const max_temp = 15;
-        if(!state.weatherInfo) {
-            return 'container-fluid container-dimensions app-cold';
-        } else if(state.weatherInfo.main.temp > max_temp) {
-            return 'container-fluid container-dimensions app-cold app-warm';
-        } else return 'container-fluid container-dimensions app-cold';
+        if(!state.weatherInfo) return 'container-fluid app-cold';
+        else if(state.weatherInfo.main.temp > max_temp) return 'container-fluid app-cold app-warm'; 
+        else return 'container-fluid app-cold';
     }
 }
 
