@@ -1,0 +1,75 @@
+.main-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.location-styles {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-shadow: 3px 3px rgba(0, 0, 0, .2);
+}
+
+.temperature-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(200px, 250px, 400px);
+    height: 15rem;
+    margin-top: 1.3rem;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: var(--main-border-radius);
+    box-shadow: 3px 5px rgba(0, 0, 0, .2);
+}
+
+.main-temperature-styles {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 3px 3px rgba(0, 0, 0, .2);
+}
+
+.min-max-container-styles {
+    display: flex;
+    justify-content: space-around;
+    min-width: 200px;
+}
+
+.min-temperature-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.min-temperature-title-styles {
+    font-size: 1.2rem;
+}
+
+.min-temperature-degree-styles {
+    font-size: 1.5rem;
+}
+
+.max-temperature-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.max-temperature-title-styles {
+    font-size: 1.2rem;
+}
+
+.max-temperature-degree-styles {
+    font-size: 1.5rem;
+}
+
+.weather-condition-styles {
+    margin-top: 1.3rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+

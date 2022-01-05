@@ -30,15 +30,16 @@ function Searcher() {
                 <form onSubmit={handleRequest} className="form-style">
                     <input 
                     type='text'
-                    onChange={handleSearch} 
+                    onChange={handleLocation} 
                     placeholder="Search for location..." 
                     className="form-control form-control-sm searcher-style" 
                     required />
                     
-                    <input 
+                    <button 
                     type='submit'
-                    className="btn btn-sm searcher-submit-style" 
-                    value='SEARCH' />
+                    className="btn btn-sm searcher-submit-style">
+                    <i className="fas fa-search"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -46,10 +47,10 @@ function Searcher() {
     
     // METHODS
 
-    // handleSearch() changes the location property on globalState.js 
+    // handleLocation() changes the location property on globalState.js 
     // and is triggered when user types each letter of the wanted location on input.
     
-    function handleSearch(e) {
+    function handleLocation(e) {
         setState({
             ...state,
             location: e.target.value
@@ -58,8 +59,8 @@ function Searcher() {
     
     // handleRequest() sets isLoading property to true and activates the loader.
     // Then, sends a GET request to openweathermap API and sets the 
-    // errorFound property to false and also, modifies the weatherInfo property on globalState.js.
-    // In case of error, isLoading property is set to false and errorFound property 
+    // requestErrorWasFound property to false and also, modifies the weatherInfo property on globalState.js.
+    // In case of error, isLoading property is set to false and requestErrorWasFound property 
     // is set to true. Function is triggered when user submits the form, either clicking
     // the submit button or pressing the enter key.
     
@@ -75,13 +76,13 @@ function Searcher() {
                 setState({
                     ...state,
                     weatherInfo: response.data,
-                    errorFound: false
+                    requestErrorWasFound: false
                 });
             }).catch(() => {
             setState({
                 ...state,
                 isLoading: false,
-                errorFound: true
+                requestErrorWasFound: true
             })
         })
     }

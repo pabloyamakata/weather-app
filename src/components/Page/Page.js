@@ -1,7 +1,7 @@
 import React from "react";
 import Searcher from "../Searcher/Searcher";
 import Loader from "../Loader/Loader";
-import Forecast from "../Forecast/Forecast";
+import Weather from "../Weather/Weather";
 import Error from "../Error/Error";
 
 function Page() {
@@ -9,7 +9,7 @@ function Page() {
         <div>
             <Searcher />
             <Loader />
-            <Forecast />
+            <Weather />
             <Error />
         </div>
     )

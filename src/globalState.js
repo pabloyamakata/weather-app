@@ -5,7 +5,7 @@ export const globalState = {
     location: null,
     degreeScale: 'metric', 
     weatherInfo: false,
-    errorFound: false
+    requestErrorWasFound: false
 }
 
 

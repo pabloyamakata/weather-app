@@ -6,12 +6,12 @@ import './errorStyles.css';
 function Error() {
 
     const value = useContext(AppContext);
-    const errorFound = value.state.errorFound;
+    const requestErrorWasFound = value.state.requestErrorWasFound;
     const isLoading = value.state.isLoading;
 
     return(
 
-        errorFound && !isLoading ?
+        requestErrorWasFound && !isLoading ?
 
                     <div className="row">
                         <div className="col error-container-styles">

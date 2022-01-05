@@ -5,7 +5,7 @@ function Header() {
     return(
         <div className='row'>
             <div className='col d-flex justify-content-center align-items-center header-spacing-top'>
-                <h1 className='font-size'>Weather <span className='font-weight-bold'>Forecast</span></h1>
+                <h1 className='font-size'><span className='font-weight-bold header-text-shadow'>Weather App</span></h1>
             </div>
         </div>
     )
