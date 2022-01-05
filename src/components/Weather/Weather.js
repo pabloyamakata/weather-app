@@ -16,6 +16,7 @@ function Weather() {
         <div className="row">
             <div className="col main-container-styles">
                 <h3 className="location-styles">{weatherInfo.name}, {weatherInfo.sys.country}</h3>
+                <p className="current-date-styles">{renderCurrentDate()}</p>
                 <div className="temperature-container-styles">
                     <p className="main-temperature-styles">{renderMainTemp()}°c</p>
                     <div className="min-max-container-styles">
@@ -38,28 +39,45 @@ function Weather() {
 
     // METHODS
 
-    // renderMainTemp()
+    // renderCurrentDate()
+
+    function renderCurrentDate() {
+        /*const months = [
+            'January', 'February', 'March', 'April', 'May', 'June', 'July', 
+            'August', 'September', 'October', 'November', 'December'
+        ];*/
+        // let dateObject = new Date();
+        // let date = dateObject.getDate();
+        // let year = dateObject.getFullYear();
+        return 'Saturday 14 January 2021';
+    }
+
+    // renderMainTemp() rounds the main temperature received from the API 
+    // response and returns its value so it can be rendered.
 
     function renderMainTemp() {
         const main_temp = Math.round(weatherInfo.main.temp);
         return main_temp; 
     }
 
-    // renderMinTemp()
+    // renderMinTemp() rounds the minimum temperature received from the API 
+    // response and returns its value so it can be rendered.
 
     function renderMinTemp() {
         const min_temp = Math.round(weatherInfo.main.temp_min);
         return min_temp;
     }
 
-    // renderMaxTemp()
+    // renderMaxTemp() rounds the maximum temperature received from the API 
+    // response and returns its value so it can be rendered.
 
     function renderMaxTemp() {
         const max_temp = Math.round(weatherInfo.main.temp_max);
         return max_temp;
     }
 
-    // renderWeatherDescription()
+    // renderWeatherDescription() turns the first letter of the weather description
+    // into a capital letter and then, returns the whole string with the new value.
 
     function renderWeatherDescription() {
         let weatherDescription = weatherInfo.weather[0]['description'];

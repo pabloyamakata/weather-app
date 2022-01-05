@@ -17,9 +17,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(200px, 250px, 400px);
+    width: 97%;
+    max-width: 270px;
     height: 15rem;
-    margin-top: 1.3rem;
+    margin-top: .4rem;
     background-color: rgba(255, 255, 255, .2);
     border-radius: var(--main-border-radius);
     box-shadow: 3px 5px rgba(0, 0, 0, .2);
@@ -69,7 +70,7 @@
 
 .weather-condition-styles {
     margin-top: 1.3rem;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: bold;
 }
 

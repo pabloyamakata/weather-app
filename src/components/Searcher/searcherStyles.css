@@ -16,7 +16,8 @@
 }
 
 .searcher-style {
-    width: clamp(200px, 50%, 350px);
+    width: 80%;
+    max-width: 400px;
     color: var(--main-text-color);
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(230, 230, 230, 1);

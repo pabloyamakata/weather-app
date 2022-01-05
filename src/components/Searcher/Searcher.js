@@ -13,6 +13,7 @@ function Searcher() {
     const access_token = value.state.access_token;
     const location = state.location;
     const degreeScale = state.degreeScale;
+    const languageSupported = state.languageSupported;
     
     // This function sets isLoading property to false and deactivates 
     // the loader after the request to openweathermap API has been successful.
@@ -71,7 +72,7 @@ function Searcher() {
             ...state,
             isLoading: true
         });
-        axios(`${base_url}q=${location}&appid=${access_token}&units=${degreeScale}`)
+        axios(`${base_url}q=${location}&appid=${access_token}&units=${degreeScale}&lang=${languageSupported}`)
             .then(response => {
                 setState({
                     ...state,

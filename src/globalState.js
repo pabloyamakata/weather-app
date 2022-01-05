@@ -5,6 +5,7 @@ export const globalState = {
     location: null,
     degreeScale: 'metric', 
     weatherInfo: false,
+    languageSupported: 'en',
     requestErrorWasFound: false
 }
 
