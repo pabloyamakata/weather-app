@@ -3,13 +3,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 2.3rem;
 }
 
 .location-styles {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
     font-weight: bold;
     text-shadow: 3px 3px rgba(0, 0, 0, .2);
+}
+
+.current-date-styles, .current-month-styles, .current-year-styles {
+    margin-left: 7px;
 }
 
 .temperature-container-styles {

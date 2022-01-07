@@ -29,18 +29,20 @@ function Searcher() {
         <div className="row">
             <div className="col">
                 <form onSubmit={handleRequest} className="form-style">
-                    <input 
-                    type='text'
-                    onChange={handleLocation} 
-                    placeholder="Search for location..." 
-                    className="form-control form-control-sm searcher-style" 
-                    required />
+                    <div className="input-group">
+                        <input 
+                        type='text'
+                        onChange={handleLocation}
+                        placeholder="Search for location..." 
+                        className="form-control form-control-sm searcher-style" 
+                        required />
                     
-                    <button 
-                    type='submit'
-                    className="btn btn-sm searcher-submit-style">
-                    <i className="fas fa-search"></i>
-                    </button>
+                        <button 
+                        type='submit'
+                        className="btn btn-sm searcher-submit-style">
+                        <i className="fas fa-search"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -16,7 +16,7 @@ function Weather() {
         <div className="row">
             <div className="col main-container-styles">
                 <h3 className="location-styles">{weatherInfo.name}, {weatherInfo.sys.country}</h3>
-                <p className="current-date-styles">{renderCurrentDate()}</p>
+                <div className="current-date-container-styles">{renderCurrentDate()}</div>
                 <div className="temperature-container-styles">
                     <p className="main-temperature-styles">{renderMainTemp()}°c</p>
                     <div className="min-max-container-styles">
@@ -39,17 +39,29 @@ function Weather() {
 
     // METHODS
 
-    // renderCurrentDate()
+    // renderCurrentDate() makes use of JavaScript Date object and its corresponding methods
+    // in order to return the current day, date, month and year.
 
     function renderCurrentDate() {
-        /*const months = [
+        const days = [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 
+            'Thursday', 'Friday', 'Saturday'
+        ];
+        const months = [
             'January', 'February', 'March', 'April', 'May', 'June', 'July', 
             'August', 'September', 'October', 'November', 'December'
-        ];*/
-        // let dateObject = new Date();
-        // let date = dateObject.getDate();
-        // let year = dateObject.getFullYear();
-        return 'Saturday 14 January 2021';
+        ];
+        let dateObject = new Date();
+        let day = days[dateObject.getDay()];
+        let date = dateObject.getDate();
+        let month = months[dateObject.getMonth()];
+        let year = dateObject.getFullYear();
+        return <p>
+                <span className="current-day-styles">{day}</span>
+                <span className="current-date-styles">{date}</span>
+                <span className="current-month-styles">{month}</span>
+                <span className="current-year-styles">{year}</span>
+                </p>;
     }
 
     // renderMainTemp() rounds the main temperature received from the API 

@@ -5,9 +5,17 @@
     padding-top: 1.3rem;
 }
 
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
 .form-control:focus {
     box-shadow: none;
-    border-color: var(--main-text-color);
     color: var(--main-text-color);
 }
 
@@ -18,12 +26,9 @@
 .searcher-style {
     width: 80%;
     max-width: 400px;
-    color: var(--main-text-color);
+    color: rgba(230, 230, 230, 1);
     background-color: rgba(0, 0, 0, 0);
-    border-color: rgba(230, 230, 230, 1);
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
     border-radius: 0;
 }
 
