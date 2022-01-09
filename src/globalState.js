@@ -1,11 +1,10 @@
 export const globalState = {
     isLoading: false,
-    access_token: '0bb04eb21c0f37a9795a67692e912190',
-    base_url: 'https://api.openweathermap.org/data/2.5/weather?',
-    location: null,
-    degreeScale: 'metric', 
+    access_token: '9fe118ad0aa74437ba7190406220201',
+    base_url: 'https://api.weatherapi.com/v1',
+    apiMethod: '/current.json',
+    location: null, 
     weatherInfo: false,
-    languageSupported: 'en',
     requestErrorWasFound: false
 }
 

@@ -10,10 +10,9 @@ function Searcher() {
     const state = value.state;
     const setState = value.setState;
     const base_url = value.state.base_url;
+    const apiMethod = state.apiMethod;
     const access_token = value.state.access_token;
     const location = state.location;
-    const degreeScale = state.degreeScale;
-    const languageSupported = state.languageSupported;
     
     // This function sets isLoading property to false and deactivates 
     // the loader after the request to openweathermap API has been successful.
@@ -61,8 +60,8 @@ function Searcher() {
     }
     
     // handleRequest() sets isLoading property to true and activates the loader.
-    // Then, sends a GET request to openweathermap API and sets the 
-    // requestErrorWasFound property to false and also, modifies the weatherInfo property on globalState.js.
+    // Then, sends a GET request to weatherapi API and sets the requestErrorWasFound 
+    // property to false and also, modifies the weatherInfo property on globalState.js.
     // In case of error, isLoading property is set to false and requestErrorWasFound property 
     // is set to true. Function is triggered when user submits the form, either clicking
     // the submit button or pressing the enter key.
@@ -74,7 +73,7 @@ function Searcher() {
             ...state,
             isLoading: true
         });
-        axios(`${base_url}q=${location}&appid=${access_token}&units=${degreeScale}&lang=${languageSupported}`)
+        axios(`${base_url}${apiMethod}?key=${access_token}&q=${location}`)
             .then(response => {
                 setState({
                     ...state,
