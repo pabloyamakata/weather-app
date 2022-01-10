@@ -18,6 +18,9 @@ function Weather() {
                 <h3 className="location-styles">{weatherInfo.location.name}, {weatherInfo.location.country}</h3>
                 <div className="current-date-container-styles">{renderCurrentDate()}</div>
                 <div className="temperature-container-styles">
+                    <img 
+                    src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
+                    alt="Weather condition icon" />
                     <p className="main-temperature-styles">{renderMainTemp()}°c</p>
                 </div>
                 <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
@@ -60,6 +63,32 @@ function Weather() {
     function renderMainTemp() {
         const main_temp = Math.round(weatherInfo.current.temp_c);
         return main_temp; 
+    }
+
+    // Inside the API response there´s a property called is_day that can 
+    // contain either the value '1' or the value '0'. If this value is equal 
+    // to '1', then the function provideMomentOfTheDay() returns a string-type 
+    // variable with the value 'day'. Otherwise, a string-type variable with 
+    // the value 'night' is returned. The purpose of this code is to provide 
+    // necessary information to render either a night weather condition icon 
+    // or a day weather condition icon.
+
+    function provideMomentOfTheDay() {
+        let isDay = weatherInfo.current.is_day;
+        let momentOfTheDay = null;
+        isDay ? momentOfTheDay = 'day' : momentOfTheDay = 'night';
+        return momentOfTheDay;
+    }
+
+    // provideIconCode() converts the weather icon URL into an array and then,
+    // returns a string-type variable named 'iconCode' that contains only the 
+    // last section of the URL: the icon code (e.g. 133.jpg).
+
+    function provideIconCode() {
+        let iconURL = weatherInfo.current.condition.icon;
+        let iconURL_isArray = iconURL.split('/');
+        let iconCode = iconURL_isArray[6];
+        return iconCode;
     }
 }
 
