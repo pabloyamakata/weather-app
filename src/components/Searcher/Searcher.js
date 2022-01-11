@@ -74,7 +74,7 @@ function Searcher() {
             ...state,
             isLoading: true
         });
-        axios(`${base_url}${apiMethod}?key=${access_token}&q=${location}`)
+        axios.get(`${base_url}${apiMethod}?key=${access_token}&q=${location}`)
             .then(response => {
                 setState({
                     ...state,
