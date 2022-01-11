@@ -15,33 +15,34 @@ function Searcher() {
     const location = state.location;
     
     // This function sets isLoading property to false and deactivates 
-    // the loader after the request to openweathermap API has been successful.
+    // the loader after the request to weatherapi API has been successful.
     
     useEffect(() => {
         setState({
             ...state,
             isLoading: false
-        })
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.weatherInfo]);
     
     return(
         <div className="row">
             <div className="col">
-                <form onSubmit={handleRequest} className="form-style">
-                    <div className="input-group">
-                        <input 
-                        type='text'
-                        onChange={handleLocation}
-                        placeholder="Search for location..." 
-                        className="form-control form-control-sm searcher-style" 
-                        required />
-                    
-                        <button 
-                        type='submit'
-                        className="btn btn-sm searcher-submit-style">
-                        <i className="fas fa-search"></i>
-                        </button>
-                    </div>
+                <form onSubmit={handleRequest} className="form-styles">
+                    <input 
+                    type='text'
+                    onChange={handleLocation}
+                    onFocus={handleInputFocus}
+                    onBlur={handleInputBlur}
+                    placeholder="Search for location..." 
+                    className="searcher-styles" 
+                    required />
+                
+                    <button 
+                    type='submit'
+                    className="searcher-submit-styles">
+                    <i className="fas fa-search"></i>
+                    </button>
                 </form>
             </div>
         </div>
@@ -87,6 +88,22 @@ function Searcher() {
                 requestErrorWasFound: true
             })
         })
+    }
+
+    // Both functions, handleInputFocus() and handleInputBlur(), have the purpose 
+    // of giving styles to the submit button located inside the form. handleInputFocus()
+    // adds a new CSS class to the aforementioned button and provides it with a brighter 
+    // bottom border after the input has received focus. When input loses its focus, 
+    // handleInputBlur() does the opposite operation. 
+
+    function handleInputFocus() {
+        let btn_submit = document.querySelector('.searcher-submit-styles');
+        btn_submit.classList.add('searcher-submit-styles-focus');
+    }
+
+    function handleInputBlur() {
+        let btn_submit = document.querySelector('.searcher-submit-styles');
+        btn_submit.classList.remove('searcher-submit-styles-focus');
     }
 }
 

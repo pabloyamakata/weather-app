@@ -1,60 +1,53 @@
-.form-style {
+.form-styles {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 1.3rem;
 }
 
-.input-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.searcher-styles {
     width: 80%;
     max-width: 400px;
+    padding-left: .4rem;
+    color: rgba(230, 230, 230, 1);
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
 
-.form-control:focus {
-    box-shadow: none;
-    color: var(--main-text-color);
-}
-
-.form-control:focus::placeholder {
-    color: var(--main-text-color);
-}
-
-.searcher-style {
-    width: 80%;
-    max-width: 400px;
-    color: rgba(230, 230, 230, 1);
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    border-radius: 0;
-}
-
-.searcher-style::placeholder {
-    color: rgba(230, 230, 230, 1);
-}
-
-.searcher-style:focus-visible {
+.searcher-styles:focus {
     outline: 0;
-    background-color: rgba(0, 0, 0, 0);
+    color: var(--main-text-color);
+    border-bottom: 1px solid var(--main-text-color);
 }
 
-.searcher-submit-style {
-    font-size: 1rem;
-    margin-left: .7rem;
-    background-color: rgba(0, 0, 0, 0);
+.searcher-styles::placeholder {
     color: rgba(230, 230, 230, 1);
 }
 
-.searcher-submit-style:hover {
+.searcher-styles:focus::placeholder {
     color: var(--main-text-color);
 }
 
-.searcher-submit-style:focus {
-    color: var(--main-text-color);
-    box-shadow: none;
+.searcher-submit-styles { 
+    width: 20%;
+    max-width: 3rem;
+    font-size: 1rem;
+    color: rgba(230, 230, 230, 1);
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
 
+.searcher-submit-styles:hover {
+    color: var(--main-text-color);
+}
+
+.searcher-submit-styles-focus {
+    border-bottom: 1px solid var(--main-text-color);
+}
 
