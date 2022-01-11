@@ -15,11 +15,11 @@ function Error() {
 
                     <div className="row">
                         <div className="col error-container-styles">
-                            <h3 className="error-styles">Ups! There has been an error...</h3>
+                            <h3 className="error-styles">Oops! There has been an error...</h3>
                         </div>
                     </div>
 
-        : null
+                    : null
     )
 }
 
