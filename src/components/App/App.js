@@ -27,7 +27,7 @@ function App() {
     function renderBackground() {
         const max_temp = 15;
         if(!state.weatherInfo) return 'container-fluid app-cold';
-        else if(state.weatherInfo.current.temp_c > max_temp) return 'container-fluid app-cold app-warm'; 
+        else if(state.weatherInfo.forecast.forecastday[0].day.avgtemp_c > max_temp) return 'container-fluid app-cold app-warm'; 
         else return 'container-fluid app-cold';
     }
 }

@@ -21,10 +21,16 @@ function Weather() {
                     <img 
                     src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
                     alt="Weather condition icon" />
-                    <p className="main-temperature-styles">{renderMainTemp()}°c</p>
+                    <div className="min-max-main-container-styles">
+                        <p className="main-temperature-styles">{renderMainTemp()}°c</p>
+                        <div className="min-max-container-styles">
+                            <p className="max-temperature-styles">{renderMaxTemp()}°c</p>
+                            <p className="min-temperature-styles">{renderMinTemp()}°c</p>
+                        </div>
+                    </div>
                 </div>
                 <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
-            </div>            
+            </div>          
         </div>
         
         : null
@@ -57,11 +63,27 @@ function Weather() {
                 </p>;
     }
 
+    // renderMinTemp() rounds the min temperature received from the API 
+    // response and returns its value so it can be rendered.
+
+    function renderMinTemp() {
+        const min_temp = Math.round(weatherInfo.forecast.forecastday[0].day.mintemp_c);
+        return min_temp;
+    }
+
+    // renderMaxTemp() rounds the max temperature received from the API 
+    // response and returns its value so it can be rendered.
+
+    function renderMaxTemp() {
+        const max_temp = Math.round(weatherInfo.forecast.forecastday[0].day.maxtemp_c);
+        return max_temp;
+    }
+
     // renderMainTemp() rounds the main temperature received from the API 
     // response and returns its value so it can be rendered.
 
     function renderMainTemp() {
-        const main_temp = Math.round(weatherInfo.current.temp_c);
+        const main_temp = Math.round(weatherInfo.forecast.forecastday[0].day.avgtemp_c);
         return main_temp; 
     }
 

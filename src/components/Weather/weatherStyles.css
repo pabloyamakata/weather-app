@@ -36,10 +36,29 @@
     box-shadow: 3px 6px rgba(0, 0, 0, .2);
 }
 
+.min-max-main-container-styles {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
 .main-temperature-styles {
     font-size: 3rem;
     font-weight: 900;
     text-shadow: 3px 6px rgba(50, 50, 70, .5);
+}
+
+.max-temperature-styles {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.min-temperature-styles {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
 .weather-condition-styles {
@@ -48,4 +67,3 @@
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
-

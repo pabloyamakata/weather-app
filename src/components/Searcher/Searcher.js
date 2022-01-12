@@ -9,9 +9,10 @@ function Searcher() {
     const value = useContext(AppContext);
     const state = value.state;
     const setState = value.setState;
-    const base_url = value.state.base_url;
+    const base_url = state.base_url;
     const apiMethod = state.apiMethod;
-    const access_token = value.state.access_token;
+    const access_token = state.access_token;
+    const forecastDays = state.forecastDays;
     const location = state.location;
     
     // This function sets isLoading property to false and deactivates 
@@ -74,8 +75,9 @@ function Searcher() {
             ...state,
             isLoading: true
         });
-        axios.get(`${base_url}${apiMethod}?key=${access_token}&q=${location}`)
+        axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=${location}`)
             .then(response => {
+                console.log(response);
                 setState({
                     ...state,
                     weatherInfo: response.data,
