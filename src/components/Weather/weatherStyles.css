@@ -2,24 +2,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
+}
+
+.second-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 2.3rem;
-}
-
-.location-styles {
-    font-size: clamp(1.1rem, 4vw, 1.6rem);
-    font-weight: 500;
-    text-shadow: 3px 3px rgba(50, 50, 70, .5);
-}
-
-.current-date-container-styles p {
-    font-style: italic;
-    font-weight: 300;
-    text-shadow: 2px 2px rgba(50, 50, 70, .5);
-}
-
-.current-date-styles, .current-month-styles, .current-year-styles {
-    margin-left: 7px;
+    width: 45%;
 }
 
 .temperature-container-styles {
@@ -30,9 +21,8 @@
     width: 97%;
     max-width: 270px;
     height: 15rem;
-    margin-top: .4rem;
+    margin-top: .9rem;
     background-color: rgba(255, 255, 255, .2);
-    border-radius: var(--main-border-radius);
     box-shadow: 3px 6px rgba(0, 0, 0, .2);
 }
 
@@ -66,4 +56,105 @@
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+/* ------------------------------------------------ */
+
+.forecast-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 1rem;
+}
+
+.tomorrow-container-styles {
+    width: 60%;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 3px 3px rgba(0, 0, 0, .2);
+    padding: .8rem .2rem .5rem 1rem;
+}
+
+.tomorrow-date-container-styles {
+    font-style: italic;
+    font-weight: 300;
+    text-shadow: 2px 2px rgba(50, 50, 70, .5);
+} 
+
+.tomorrow-date-container-styles p {
+    margin-bottom: 0;
+}
+
+.tomorrow-date-styles {
+    margin-left: 7px;
+}
+
+.tomorrow-data-container-styles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tomorrow-temperature-styles {
+    align-self: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+    margin-bottom: 0;
+}
+
+.tomorrow-description-styles {
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.tomorrow-description-styles, .tomorrow-icon-styles {
+    margin-bottom: 0;
+    align-self: center;
+    margin-left: 1.2rem;
+}
+
+/* ------------------------------------------------ */
+
+.third-day-container-styles {
+    width: 60%;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 3px 3px rgba(0, 0, 0, .2);
+    padding: .8rem .2rem .5rem 1rem;
+    margin-top: 1.2rem;
+}
+
+.third-day-date-styles {
+    font-style: italic;
+    font-weight: 300;
+    text-shadow: 2px 2px rgba(50, 50, 70, .5);
+} 
+
+.third-day-date-styles p {
+    margin-bottom: 0;
+}
+
+.third-day-data-container-styles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.third-day-temperature-styles {
+    align-self: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+    margin-bottom: 0;
+}
+
+.third-day-description-styles {
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.third-day-description-styles, .third-day-icon-styles {
+    margin-bottom: 0;
+    align-self: center;
+    margin-left: 1.2rem;
 }

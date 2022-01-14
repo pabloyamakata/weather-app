@@ -10,23 +10,47 @@ function Weather() {
         weatherInfo && !isLoading && !requestErrorWasFound ? 
         
         <div className="row">
-            <div className="col main-container-styles">
-                <h3 className="location-styles">{weatherInfo.location.name}, {weatherInfo.location.country}</h3>
-                <div className="current-date-container-styles">{renderCurrentDate()}</div>
-                <div className="temperature-container-styles">
-                    <img 
-                    src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
-                    alt="Weather condition icon" />
-                    <div className="min-max-main-container-styles">
-                        <p className="main-temperature-styles">{renderMainTemp()}°c</p>
-                        <div className="min-max-container-styles">
-                            <p className="max-temperature-styles">{renderMaxTemp()}°c</p>
-                            <p className="min-temperature-styles">{renderMinTemp()}°c</p>
+            <div className="col col-lg-6 main-container-styles">
+                <div className="second-container-styles">
+                    <div className="temperature-container-styles">
+                        <img 
+                        src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
+                        alt="Weather condition icon" />
+                        <div className="min-max-main-container-styles">
+                            <p className="main-temperature-styles">{renderMainTemp()}°c</p>
+                            <div className="min-max-container-styles">
+                                <p className="max-temperature-styles">{renderMaxTemp()}°c</p>
+                                <p className="min-temperature-styles">{renderMinTemp()}°c</p>
+                            </div>
                         </div>
                     </div>
+                    <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
                 </div>
-                <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
-            </div>          
+            </div>  
+            <div className=" col col-lg-6 forecast-container-styles">
+                <div className="tomorrow-container-styles">
+                    <div className="tomorrow-date-container-styles">{renderTomorrowDate()}</div>
+                    <div className="tomorrow-data-container-styles">
+                        <p className="tomorrow-temperature-styles">{renderTomorrowTemperature()}°c</p>
+                        <p className="tomorrow-description-styles">{weatherInfo.forecast.forecastday[1].day.condition.text}</p>
+                        <img
+                        className="tomorrow-icon-styles" 
+                        src={`https://cdn.weatherapi.com/weather/64x64/day/${provideTomorrowIconCode()}`} 
+                        alt="Weather condition icon" />
+                    </div>
+                </div>
+                <div className="third-day-container-styles">
+                    <div className="third-day-date-styles">{renderTomorrowDate()}</div>
+                    <div className="third-day-data-container-styles">
+                        <p className="third-day-temperature-styles">{renderTomorrowTemperature()}°c</p>
+                        <p className="third-day-description-styles">{weatherInfo.forecast.forecastday[1].day.condition.text}</p>
+                        <img
+                        className="third-day-icon-styles" 
+                        src={`https://cdn.weatherapi.com/weather/64x64/day/${provideTomorrowIconCode()}`} 
+                        alt="Weather condition icon" />
+                    </div>
+                </div>
+            </div>        
         </div>
         
         : null
@@ -34,32 +58,7 @@ function Weather() {
 
     // METHODS
 
-    // renderCurrentDate() makes use of JavaScript Date object and its corresponding methods
-    // in order to return the current day, date, month and year.
-
-    function renderCurrentDate() {
-        const days = [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 
-            'Thursday', 'Friday', 'Saturday'
-        ];
-        const months = [
-            'January', 'February', 'March', 'April', 'May', 'June', 'July', 
-            'August', 'September', 'October', 'November', 'December'
-        ];
-        let dateObject = new Date();
-        let day = days[dateObject.getDay()];
-        let date = dateObject.getDate();
-        let month = months[dateObject.getMonth()];
-        let year = dateObject.getFullYear();
-        return  <p>
-                <span className="current-day-styles">{day}</span>
-                <span className="current-date-styles">{date}</span>
-                <span className="current-month-styles">{month}</span>
-                <span className="current-year-styles">{year}</span>
-                </p>;
-    }
-
-    // renderMinTemp() rounds the min temperature received from the API 
+    // renderMinTemp() rounds the minimum temperature received from the API 
     // response and returns its value so it can be rendered.
 
     function renderMinTemp() {
@@ -67,7 +66,7 @@ function Weather() {
         return min_temp;
     }
 
-    // renderMaxTemp() rounds the max temperature received from the API 
+    // renderMaxTemp() rounds the maximum temperature received from the API 
     // response and returns its value so it can be rendered.
 
     function renderMaxTemp() {
@@ -104,6 +103,45 @@ function Weather() {
 
     function provideIconCode() {
         let iconURL = weatherInfo.current.condition.icon;
+        let iconURL_isArray = iconURL.split('/');
+        let iconCode = iconURL_isArray[6];
+        return iconCode;
+    }
+
+    // renderTomorrowDate()
+
+    function renderTomorrowDate() {
+        const days = [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 
+            'Thursday', 'Friday', 'Saturday'
+        ];
+        
+        let dateObject = new Date();
+        let day;
+
+        dateObject.getDay() == 6 ? day = days[dateObject.getDay() - 6] : 
+        day = days[dateObject.getDay() + 1];
+
+        let tomorrowDate = weatherInfo.forecast.forecastday[1].date;
+        let tomorrowDate_isArray = tomorrowDate.split('-');
+        let dayDate = tomorrowDate_isArray[2];
+        return <p>
+                    <span className="tomorrow-day-styles">{day}</span>
+                    <span className="tomorrow-date-styles">{dayDate}</span>
+               </p>;
+    }
+
+    // renderTomorrowTemperature()
+
+    function renderTomorrowTemperature() {
+        const tomorrow_temp = Math.round(weatherInfo.forecast.forecastday[1].day.avgtemp_c);
+        return tomorrow_temp;
+    }
+
+    // provideTomorrowIconCode()
+
+    function provideTomorrowIconCode() {
+        let iconURL = weatherInfo.forecast.forecastday[1].day.condition.icon;
         let iconURL_isArray = iconURL.split('/');
         let iconCode = iconURL_isArray[6];
         return iconCode;
