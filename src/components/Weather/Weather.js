@@ -4,11 +4,7 @@ import { AppContext } from "../App/App";
 import './weatherStyles.css';
 
 function Weather() {
-    const value = useContext(AppContext);
-    const state = value.state; 
-    const weatherInfo = state.weatherInfo;
-    const isLoading = state.isLoading;
-    const requestErrorWasFound = state.requestErrorWasFound;
+    const {state: {weatherInfo, isLoading, requestErrorWasFound}} = useContext(AppContext);
 
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ? 

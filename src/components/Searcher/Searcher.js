@@ -6,14 +6,17 @@ import './searcherStyles.css';
 
 function Searcher() {
     
-    const value = useContext(AppContext);
-    const state = value.state;
-    const setState = value.setState;
-    const base_url = state.base_url;
-    const apiMethod = state.apiMethod;
-    const access_token = state.access_token;
-    const forecastDays = state.forecastDays;
-    const location = state.location;
+    const {
+        state,
+        state: {
+            base_url,
+            apiMethod, 
+            access_token, 
+            forecastDays, 
+            location
+        },  
+        setState
+    } = useContext(AppContext);
     
     // This function sets isLoading property to false and deactivates 
     // the loader after the request to weatherapi API has been successful.

@@ -4,8 +4,7 @@ import { AppContext } from "../App/App";
 import './loaderStyles.css';
 
 function Loader() {  
-    const value = useContext(AppContext);
-    const isLoading = value.state.isLoading;  
+    const {state: {isLoading}} = useContext(AppContext);  
     return(
         isLoading ? <div className="row">
                         <div className="col loader-container-styles">
