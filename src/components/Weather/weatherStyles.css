@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 98%;
+    max-width: 270px;
 }
 
 .temperature-container-styles {
@@ -18,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 97%;
+    width: 98%;
     max-width: 270px;
     height: 15rem;
     margin-top: .9rem;
@@ -69,7 +70,8 @@
 }
 
 .tomorrow-container-styles {
-    width: 60%;
+    width: 99%;
+    max-width: 395.39px;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 3px rgba(0, 0, 0, .2);
     padding: .8rem .2rem .5rem 1rem;
@@ -91,7 +93,9 @@
 
 .tomorrow-data-container-styles {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .tomorrow-temperature-styles {
@@ -117,7 +121,8 @@
 /* ------------------------------------------------ */
 
 .third-day-container-styles {
-    width: 60%;
+    width: 99%;
+    max-width: 395.39px;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 3px rgba(0, 0, 0, .2);
     padding: .8rem .2rem .5rem 1rem;
@@ -136,7 +141,9 @@
 
 .third-day-data-container-styles {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .third-day-temperature-styles {
@@ -157,4 +164,17 @@
     margin-bottom: 0;
     align-self: center;
     margin-left: 1.2rem;
+}
+
+/* ------------------------------------------------ */
+
+@media all and (max-width: 991px) {
+    
+    .main-container-styles {
+        align-items: center;
+    }
+
+    .forecast-container-styles {
+        align-items: center;
+    }
 }

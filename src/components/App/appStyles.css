@@ -23,6 +23,7 @@
     background-image: var(--cold-bg-image);
     background-size: cover;
     background-position: bottom;
+    background-attachment: fixed;
     transition: .5s ease;
 }
 
@@ -42,3 +43,9 @@
    https://stackoverflow.com/questions/17134929/overlay-a-background-image-with-an-rgba-background-color 
    
 */
+
+@media all and (max-width: 991px) {
+    #main-container {
+        padding-bottom: 2rem;
+    }
+}
