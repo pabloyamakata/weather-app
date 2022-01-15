@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 98%;
+    width: 100%;
     max-width: 270px;
 }
 
@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 98%;
+    width: 100%;
     max-width: 270px;
     height: 15rem;
     margin-top: .9rem;
@@ -70,20 +70,22 @@
 }
 
 .tomorrow-container-styles {
-    width: 99%;
+    width: 100%;
     max-width: 395.39px;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 3px rgba(0, 0, 0, .2);
-    padding: .8rem .2rem .5rem 1rem;
+    padding: .8rem .5rem .5rem 1rem;
 }
 
 .tomorrow-date-container-styles {
+    display: inline-block;
     font-style: italic;
     font-weight: 300;
     text-shadow: 2px 2px rgba(50, 50, 70, .5);
 } 
 
 .tomorrow-date-container-styles p {
+    display: inline-block;
     margin-bottom: 0;
 }
 
@@ -94,8 +96,8 @@
 .tomorrow-data-container-styles {
     display: flex;
     justify-content: space-between;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    /* margin-left: .5rem; */
+    /* margin-right: .5rem; */
 }
 
 .tomorrow-temperature-styles {
@@ -107,6 +109,7 @@
 }
 
 .tomorrow-description-styles {
+    /* margin-left: 1.2rem; */
     font-size: 1rem;
     font-weight: 500;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
@@ -115,17 +118,16 @@
 .tomorrow-description-styles, .tomorrow-icon-styles {
     margin-bottom: 0;
     align-self: center;
-    margin-left: 1.2rem;
 }
 
 /* ------------------------------------------------ */
 
 .third-day-container-styles {
-    width: 99%;
+    width: 100%;
     max-width: 395.39px;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 3px rgba(0, 0, 0, .2);
-    padding: .8rem .2rem .5rem 1rem;
+    padding: .8rem .5rem .5rem 1rem;
     margin-top: 1.2rem;
 }
 
@@ -142,8 +144,8 @@
 .third-day-data-container-styles {
     display: flex;
     justify-content: space-between;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
 }
 
 .third-day-temperature-styles {
@@ -163,10 +165,32 @@
 .third-day-description-styles, .third-day-icon-styles {
     margin-bottom: 0;
     align-self: center;
-    margin-left: 1.2rem;
 }
 
 /* ------------------------------------------------ */
+
+@media all and (max-width: 349px) {
+
+    .tomorrow-temperature-styles {
+        font-size: 1rem;
+    }
+
+    .tomorrow-description-styles {
+        margin-left: 1rem;
+        font-size: .9rem;
+        text-align: center;
+    }
+
+    .third-day-temperature-styles {
+        font-size: 1rem;
+    }
+    
+    .third-day-description-styles {
+        margin-left: 1rem;
+        font-size: .9rem;
+        text-align: center;
+    }
+} 
 
 @media all and (max-width: 991px) {
     
