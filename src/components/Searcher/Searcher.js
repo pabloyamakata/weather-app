@@ -80,7 +80,6 @@ function Searcher() {
         });
         axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=${location}`)
             .then(response => {
-                console.log(response);
                 setState({
                     ...state,
                     weatherInfo: response.data,
@@ -91,8 +90,8 @@ function Searcher() {
                 ...state,
                 isLoading: false,
                 requestErrorWasFound: true
-            })
-        })
+            });
+        });
     }
 
     // Both functions, handleInputFocus() and handleInputBlur(), have the purpose 
