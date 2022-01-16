@@ -52,7 +52,7 @@ function Searcher() {
         }
 
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
     // This function sets isLoading property to false and deactivates 
