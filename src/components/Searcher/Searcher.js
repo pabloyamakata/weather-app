@@ -17,6 +17,43 @@ function Searcher() {
         },  
         setState
     } = useContext(AppContext);
+
+    useEffect(() => {
+        setState({
+            ...state,
+            isLoading: true
+        });
+
+        const successCallback = (position) => {
+            const {latitude, longitude} = position.coords;
+            
+            axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=${latitude},${longitude}`)
+            .then(response => {
+                setState({
+                    ...state,
+                    weatherInfo: response.data,
+                    requestErrorWasFound: false
+                });
+            }).catch(() => {
+            setState({
+                ...state,
+                isLoading: false,
+                requestErrorWasFound: true
+            });
+        });
+        }
+
+        const errorCallback = () => {
+            setState({
+                ...state,
+                isLoading: false,
+                requestErrorWasFound: true
+            })
+        }
+
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+    },[]);
     
     // This function sets isLoading property to false and deactivates 
     // the loader after the request to weatherapi API has been successful.
