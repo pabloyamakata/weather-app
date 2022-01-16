@@ -139,7 +139,9 @@ function Weather() {
                </p>;
     }
 
-    // renderTomorrowTemperature()
+    // renderTomorrowTemperature() receives the API response and rounds the 
+    // main temperature of the second day. Then, it returns its value so it 
+    // can be rendered.
 
     function renderTomorrowTemperature() {
         const tomorrow_temp = Math.round(weatherInfo.forecast.forecastday[1].day.avgtemp_c);
