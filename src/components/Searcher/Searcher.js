@@ -23,11 +23,7 @@ function Searcher() {
             ...state,
             isLoading: true
         });
-
-        const successCallback = (position) => {
-            const {latitude, longitude} = position.coords;
-            
-            axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=${latitude},${longitude}`)
+        axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=auto:ip`)
             .then(response => {
                 setState({
                     ...state,
@@ -41,24 +37,6 @@ function Searcher() {
                 requestErrorWasFound: true
             });
         });
-        }
-
-        const errorCallback = (error) => {
-            if(error.code === 1) {
-                setState({
-                    ...state,
-                    isLoading: false
-                });
-                document.getElementById('geolocation-alert').classList.remove('hide-alert');
-            } else {
-                setState({
-                    ...state,
-                    isLoading: false
-                })
-            }
-        }
-
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
@@ -92,10 +70,6 @@ function Searcher() {
                     <i className="fas fa-search"></i>
                     </button>
                 </form>
-                <div id="geolocation-alert" className="alert alert-info alert-dismissible hide-alert" role="alert">
-                    Need to enable geolocation to get full experience!
-                    <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" />
-                </div>
             </div>
         </div>
     )

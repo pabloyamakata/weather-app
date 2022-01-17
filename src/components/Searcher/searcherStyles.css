@@ -1,14 +1,3 @@
-#geolocation-alert {
-    width: 50%;
-    margin-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hide-alert {
-    display: none;
-}
-
 .form-styles {
     display: flex;
     justify-content: center;
@@ -62,14 +51,3 @@
 .searcher-submit-styles-focus {
     border-bottom: 1px solid var(--main-text-color);
 }
-
-/* ----------------------------------------------- */
-
-@media all and (max-width: 599px) {
-    
-    #geolocation-alert {
-        width: 100%;
-        margin-top: 2rem;
-    }
-}
-
