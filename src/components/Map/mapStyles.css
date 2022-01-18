@@ -1,0 +1,9 @@
+.row-spacing-top {
+    padding-top: 1.5rem;
+}
+
+.map-container-styles {
+    border: 1px solid red;
+    width: 100%;
+    height: 300px;
+}

@@ -7,4 +7,5 @@
 
 .error-styles {
     color: var(--main-text-color);
+    text-align: center;
 }

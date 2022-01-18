@@ -25,6 +25,7 @@ function Searcher() {
         });
         axios.get(`${base_url}${apiMethod}?key=${access_token}&days=${forecastDays}&q=auto:ip`)
             .then(response => {
+                console.log(response);
                 setState({
                     ...state,
                     weatherInfo: response.data,

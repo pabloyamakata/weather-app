@@ -3,6 +3,7 @@ import Searcher from "../Searcher/Searcher";
 import Location from "../Location/Location";
 import Loader from "../Loader/Loader";
 import Weather from "../Weather/Weather";
+import Map from "../Map/Map";
 import Error from "../Error/Error";
 
 function Page() {
@@ -12,6 +13,7 @@ function Page() {
             <Location />
             <Loader />
             <Weather />
+            <Map />
             <Error />
         </div>
     )

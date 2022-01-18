@@ -54,7 +54,7 @@
 
 .weather-condition-styles {
     margin-top: 1.3rem;
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: 1.7rem;
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
     text-align: center;
@@ -129,7 +129,7 @@
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 3px rgba(0, 0, 0, .2);
     padding: .8rem .5rem .5rem 1rem;
-    margin-top: 1.2rem;
+    margin-top: 1.29rem;
 }
 
 .third-day-date-styles {
