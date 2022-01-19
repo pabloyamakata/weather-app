@@ -7,7 +7,7 @@ function Forecast() {
             <div className="col">
                 <div>
                     <p>
-                        Hola mundo!
+                        Here goes Forecast component!
                     </p>
                 </div>
             </div>
