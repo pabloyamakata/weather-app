@@ -14,7 +14,7 @@ function useAxios() {
         setState
     } = useContext(AppContext);
 
-    const sendRequest = requestQuery => {
+    const axiosGet = requestQuery => {
 
         setState({
             ...state,
@@ -37,7 +37,7 @@ function useAxios() {
         });
     }
 
-    return {sendRequest};
+    return {axiosGet};
 }
 
 export default useAxios;

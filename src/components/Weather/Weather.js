@@ -7,8 +7,8 @@ import './weatherStyles.css';
 
 function Weather() {
     const {state: {weatherInfo, isLoading, requestErrorWasFound}} = useContext(AppContext);
-    const {renderMin, renderMax, renderMain} = useTemperature();
-    const {getMomentOfTheDay, getIcon} = useImage();
+    const {renderMinTemp, renderMaxTemp, renderMainTemp} = useTemperature();
+    const {getMomentOfTheDay, getIconCode} = useImage();
 
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ? 
@@ -17,13 +17,13 @@ function Weather() {
                 <div className="second-container-styles">
                     <div className="temperature-container-styles">
                         <img 
-                        src={`https://cdn.weatherapi.com/weather/128x128/${getMomentOfTheDay()}/${getIcon(0)}`} 
+                        src={`https://cdn.weatherapi.com/weather/128x128/${getMomentOfTheDay()}/${getIconCode(0)}`} 
                         alt="Weather condition icon" />
                         <div className="min-max-main-container-styles">
-                            <p className="main-temperature-styles">{renderMain(0)}°c</p>
+                            <p className="main-temperature-styles">{renderMainTemp(0)}°c</p>
                             <div className="min-max-container-styles">
-                                <p className="max-temperature-styles">{renderMax(0)}°c</p>
-                                <p className="min-temperature-styles">{renderMin(0)}°c</p>
+                                <p className="max-temperature-styles">{renderMaxTemp(0)}°c</p>
+                                <p className="min-temperature-styles">{renderMinTemp(0)}°c</p>
                             </div>
                         </div>
                     </div>

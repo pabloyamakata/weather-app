@@ -11,7 +11,7 @@ function useImage() {
         return momentOfTheDay;
     }
     
-    const getIcon = selectedDay => {
+    const getIconCode = selectedDay => {
         
         if(selectedDay === 0) {
             const iconURL = weatherInfo.current.condition.icon;
@@ -26,7 +26,7 @@ function useImage() {
         }
     }
 
-    return {getMomentOfTheDay, getIcon};
+    return {getMomentOfTheDay, getIconCode};
 }
 
 export default useImage;

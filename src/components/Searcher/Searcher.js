@@ -6,10 +6,14 @@ import './searcherStyles.css';
 
 function Searcher() {
     const {state, state: {location}, setState} = useContext(AppContext);
-    const {sendRequest} = useAxios();
+    const {axiosGet} = useAxios();
+
+    // This function sends a GET request to weatherapi API on first 
+    // render. It takes user's IP address as main parameter in order
+    // to display weather data based on user's location.  
 
     useEffect(() => {
-        sendRequest('auto:ip');
+        axiosGet('auto:ip');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
@@ -30,7 +34,7 @@ function Searcher() {
                 <form 
                 onSubmit={event => {
                     event.preventDefault(); 
-                    sendRequest(location)
+                    axiosGet(location)
                 }} 
                 className="form-styles">
                     

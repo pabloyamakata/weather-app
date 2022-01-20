@@ -6,8 +6,8 @@ import './thirdDayStyles.css';
 
 function ThirdDay() {
     const {renderDay, renderDate} = useDate();
-    const {renderMin, renderMax} = useTemperature();
-    const {getIcon} = useImage();
+    const {renderMinTemp, renderMaxTemp} = useTemperature();
+    const {getIconCode} = useImage();
     return(
         <div className="third-day-container-styles">
             <div className="third-day-date-container-styles">
@@ -18,13 +18,13 @@ function ThirdDay() {
             </div>
             <div className="third-day-min-max-container-styles">
                 <p className="third-day-min-max-styles">
-                    <span className="third-day-min-styles">{renderMin(2)}</span>
-                    <span className="third-day-max-styles">{renderMax(2)}</span>
+                    <span className="third-day-min-styles">{renderMinTemp(2)}</span>
+                    <span className="third-day-max-styles">{renderMaxTemp(2)}</span>
                 </p>
             </div>
             <div className="third-day-weather-icon-container-styles">
                 <img
-                src={`https://cdn.weatherapi.com/weather/64x64/day/${getIcon(2)}`}
+                src={`https://cdn.weatherapi.com/weather/64x64/day/${getIconCode(2)}`}
                 alt="Weather condition icon" />
             </div>
         </div>

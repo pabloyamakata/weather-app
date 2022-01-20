@@ -6,8 +6,8 @@ import './secondDayStyles.css';
 
 function SecondDay() {
     const {renderDay, renderDate} = useDate();
-    const {renderMin, renderMax} = useTemperature();
-    const {getIcon} = useImage();
+    const {renderMinTemp, renderMaxTemp} = useTemperature();
+    const {getIconCode} = useImage();
     return(
         <div className="tomorrow-container-styles">
             <div className="tomorrow-date-container-styles">
@@ -18,13 +18,13 @@ function SecondDay() {
             </div>
             <div className="tomorrow-min-max-container-styles">
                 <p className="tomorrow-min-max-styles">
-                    <span className="tomorrow-min-styles">{renderMin(1)}</span>
-                    <span className="tomorrow-max-styles">{renderMax(1)}</span>
+                    <span className="tomorrow-min-styles">{renderMinTemp(1)}</span>
+                    <span className="tomorrow-max-styles">{renderMaxTemp(1)}</span>
                 </p>
             </div>
             <div className="tomorrow-weather-icon-container-styles">
                 <img
-                src={`https://cdn.weatherapi.com/weather/64x64/day/${getIcon(1)}`}
+                src={`https://cdn.weatherapi.com/weather/64x64/day/${getIconCode(1)}`}
                 alt="Weather condition icon" />
             </div>
         </div>

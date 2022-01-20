@@ -4,22 +4,22 @@ import { AppContext } from "../components/App/App";
 function useTemperature() {
     const {state: {weatherInfo}} = useContext(AppContext);
 
-    const renderMin = selectedDay => {
+    const renderMinTemp = selectedDay => {
         const min_temp = Math.round(weatherInfo.forecast.forecastday[selectedDay].day.mintemp_c);
         return min_temp;
     }
 
-    const renderMax = selectedDay => {
+    const renderMaxTemp = selectedDay => {
         const max_temp = Math.round(weatherInfo.forecast.forecastday[selectedDay].day.maxtemp_c);
         return max_temp;
     }
 
-    const renderMain = selectedDay => {
+    const renderMainTemp = selectedDay => {
         const main_temp = Math.round(weatherInfo.forecast.forecastday[selectedDay].day.avgtemp_c);
         return main_temp; 
     }
 
-    return {renderMin, renderMax, renderMain};
+    return {renderMinTemp, renderMaxTemp, renderMainTemp};
 }
 
 export default useTemperature;
