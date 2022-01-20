@@ -1,0 +1,13 @@
+.forecast-container-styles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media all and (max-width: 991px) {
+    
+    .forecast-container-styles {
+        align-items: center;
+    }
+}

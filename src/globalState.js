@@ -4,7 +4,7 @@ export const globalState = {
     base_url: 'https://api.weatherapi.com/v1',
     apiMethod: '/forecast.json',
     location: null, 
-    forecastDays: 7,
+    forecastDays: 3,
     weatherInfo: false,
     requestErrorWasFound: false
 }

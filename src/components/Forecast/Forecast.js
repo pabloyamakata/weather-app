@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../App/App";
 import SecondDay from "./Days/SecondDay";
+import ThirdDay from "./Days/ThirdDay";
 import './forecastStyles.css';
 
 function Forecast() {
@@ -9,11 +10,10 @@ function Forecast() {
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ? 
 
-        <div className="row">
-            <div className="col forecast-container-styles">
+            <div className="col-12 col-lg-6 forecast-container-styles">
                 <SecondDay />
+                <ThirdDay />
             </div>
-        </div>
 
         : null
     )

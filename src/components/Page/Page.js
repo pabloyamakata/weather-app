@@ -12,8 +12,10 @@ function Page() {
             <Searcher />
             <Location />
             <Loader />
-            <Weather />
-            <Forecast />
+            <div className="row">
+                <Weather />
+                <Forecast />
+            </div>
             <Error />
         </div>
     )

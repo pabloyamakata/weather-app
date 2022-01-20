@@ -9,23 +9,23 @@ function Weather() {
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ? 
         
-        <div className="row">
-            <div className="col main-container-styles">
-                <div className="temperature-container-styles">
-                    <img 
-                    src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
-                    alt="Weather condition icon" />
-                    <div className="min-max-main-container-styles">
-                        <p className="main-temperature-styles">{renderMainTemp()}°c</p>
-                        <div className="min-max-container-styles">
-                            <p className="max-temperature-styles">{renderMaxTemp()}°c</p>
-                            <p className="min-temperature-styles">{renderMinTemp()}°c</p>
+            <div className="col-12 col-lg-6 main-container-styles">
+                <div className="second-container-styles">
+                    <div className="temperature-container-styles">
+                        <img 
+                        src={`https://cdn.weatherapi.com/weather/128x128/${provideMomentOfTheDay()}/${provideIconCode()}`} 
+                        alt="Weather condition icon" />
+                        <div className="min-max-main-container-styles">
+                            <p className="main-temperature-styles">{renderMainTemp()}°c</p>
+                            <div className="min-max-container-styles">
+                                <p className="max-temperature-styles">{renderMaxTemp()}°c</p>
+                                <p className="min-temperature-styles">{renderMinTemp()}°c</p>
+                            </div>
                         </div>
                     </div>
+                    <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
                 </div>
-                <p className="weather-condition-styles">{weatherInfo.current.condition.text}</p>
             </div>         
-        </div>
         
         : null
     )

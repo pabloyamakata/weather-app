@@ -1,8 +1,16 @@
 .main-container-styles {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.second-container-styles {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 270px;
 }
 
 .temperature-container-styles {
@@ -49,4 +57,11 @@
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
     text-align: center;
+}
+
+@media all and (max-width: 991px) {
+
+    .main-container-styles {
+        justify-content: center;
+    }
 }

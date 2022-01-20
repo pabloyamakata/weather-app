@@ -12,8 +12,8 @@ function SecondDay() {
         <div className="tomorrow-container-styles">
             <div className="tomorrow-date-container-styles">
                 <p className="tomorrow-date-styles">
-                    <span className="tomorrow-day-styles">{renderDay(2)}</span>
-                    <span className="tomorrow-date-number-styles">{renderDate(2)}</span>
+                    <span className="tomorrow-day-styles">{renderDay(1)}</span>
+                    <span className="tomorrow-date-number-styles">{renderDate(1)}</span>
                 </p>
             </div>
             <div className="tomorrow-min-max-container-styles">
