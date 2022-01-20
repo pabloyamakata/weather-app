@@ -10,7 +10,9 @@ function Loader() {
                         <div className="col loader-container-styles">
                             <i className="fas fa-spinner fa-pulse loader-styles"></i>
                         </div>
-                    </div> : null
+                    </div> 
+                    
+                    : null
     )
 }
 
