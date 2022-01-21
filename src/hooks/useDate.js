@@ -31,14 +31,14 @@ function useDate() {
     const renderMonth = selectedDay => {
         const dateStringFromAPI = weatherInfo.forecast.forecastday[selectedDay].date;
         const dateObject = new Date(dateStringFromAPI.replace(/-/g, '/'));
-        let month = months[dateObject.getMonth()];
+        const month = months[dateObject.getMonth()];
         return month;
     }
 
     const renderYear = selectedDay => {
         const dateStringFromAPI = weatherInfo.forecast.forecastday[selectedDay].date;
         const dateObject = new Date(dateStringFromAPI.replace(/-/g, '/'));
-        let year = dateObject.getFullYear();
+        const year = dateObject.getFullYear();
         return year;
     }
 

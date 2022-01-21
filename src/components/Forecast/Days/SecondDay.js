@@ -6,26 +6,35 @@ import './secondDayStyles.css';
 
 function SecondDay() {
     const {renderDay, renderDate} = useDate();
-    const {renderMinTemp, renderMaxTemp} = useTemperature();
+    const {renderMinTemp, renderMaxTemp, renderMainTemp} = useTemperature();
     const {getIconCode} = useImage();
     return(
-        <div className="tomorrow-container-styles">
-            <div className="tomorrow-date-container-styles">
-                <p className="tomorrow-date-styles">
-                    <span className="tomorrow-day-styles">{renderDay(1)}</span>
-                    <span className="tomorrow-date-number-styles">{renderDate(1)}</span>
+        <div>
+            <div>
+                <p>
+                    <span>{renderDay(1)}</span>
+                    <span>{renderDate(1)}</span>
                 </p>
             </div>
-            <div className="tomorrow-min-max-container-styles">
-                <p className="tomorrow-min-max-styles">
-                    <span className="tomorrow-min-styles">{renderMinTemp(1)}</span>
-                    <span className="tomorrow-max-styles">{renderMaxTemp(1)}</span>
+            <div>
+                <p>
+                    <span>{renderMainTemp(1)}</span>
                 </p>
-            </div>
-            <div className="tomorrow-weather-icon-container-styles">
-                <img
-                src={`https://cdn.weatherapi.com/weather/64x64/day/${getIconCode(1)}`}
-                alt="Weather condition icon" />
+                <div>
+                    <div>
+                        <i className="fas fa-angle-double-up"></i>
+                        <p>{renderMaxTemp(1)}</p>
+                    </div>
+                    <div>
+                        <i className="fas fa-angle-double-down"></i>
+                        <p>{renderMinTemp(1)}</p>
+                    </div>
+                    <div>
+                        <img
+                        src={`https://cdn.weatherapi.com/weather/64x64/day/${getIconCode(1)}`}
+                        alt="Weather condition icon" />
+                    </div>
+                </div>
             </div>
         </div>
     )
