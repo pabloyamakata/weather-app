@@ -5,7 +5,15 @@ import useAxios from "../../hooks/useAxios";
 import './searcherStyles.css';
 
 function Searcher() {
-    const {state, state: {location}, setState} = useContext(AppContext);
+    const {
+        state, 
+        state: {location}, 
+        setState, 
+        handleLocation, 
+        handleInputFocus, 
+        handleInputBlur
+    } = useContext(AppContext);
+    
     const {axiosGet} = useAxios();
 
     // This function sends a GET request to weatherapi API on first 
@@ -56,34 +64,6 @@ function Searcher() {
             </div>
         </div>
     )
-    
-    // METHODS
-
-    // handleLocation() changes the location property on globalState.js 
-    // and is triggered when user types each letter of the wanted location on input.
-    
-    function handleLocation(e) {
-        setState({
-            ...state,
-            location: e.target.value
-        });
-    }
-
-    // Both functions, handleInputFocus() and handleInputBlur(), have the purpose 
-    // of giving styles to the submit button located inside the form. handleInputFocus()
-    // adds a new CSS class to the aforementioned button and provides it with a brighter 
-    // bottom border after the input has received focus. When input loses its focus, 
-    // handleInputBlur() does the opposite operation. 
-
-    function handleInputFocus() {
-        let btn_submit = document.querySelector('.searcher-submit-styles');
-        btn_submit.classList.add('searcher-submit-styles-focus');
-    }
-
-    function handleInputBlur() {
-        let btn_submit = document.querySelector('.searcher-submit-styles');
-        btn_submit.classList.remove('searcher-submit-styles-focus');
-    }
 }
 
 export default Searcher;

@@ -1,0 +1,114 @@
+.second-day-container-styles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    padding: 1rem .4rem 0 .8rem;
+    border-radius: var(--main-border-radius);
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 3px 6px rgba(0, 0, 0, .2);
+}
+
+.second-day-date-container-styles {
+    width: fit-content;
+}
+
+.second-day-dayname-styles {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.second-day-date-styles {
+    margin-left: .5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.second-day-weather-data-container-styles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-day-main-temperature-styles {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.second-day-min-max-container-styles {
+    display: flex;
+}
+
+.second-day-max-container-styles {
+    display: flex;
+}
+
+.fa-angle-double-up {
+    align-self: center;
+}
+
+.second-day-max-styles {
+    margin: 0 0 0 .5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.second-day-min-container-styles {
+    display: flex;
+    margin-left: 1.4rem;
+}
+
+.fa-angle-double-down {
+    align-self: center;
+}
+
+.second-day-min-styles {
+    margin: 0 0 0 .5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, .5);
+}
+
+.second-day-weather-icon-container-styles {
+    position: relative;
+    bottom: .3rem;
+}
+
+@media all and (max-width: 358px) {
+
+    .second-day-container-styles {
+        padding: .5rem .4rem 0 .8rem;
+    }
+
+    .second-day-dayname-styles {
+        font-size: 1rem;
+    }
+    
+    .second-day-date-styles {
+        font-size: 1rem;
+    }
+
+    .second-day-main-temperature-styles {
+        font-size: 1rem;
+    } 
+
+    .second-day-min-max-container-styles {
+        flex-direction: column;
+    }
+
+    .second-day-max-styles {
+        font-size: 1rem;
+    }
+
+    .second-day-min-container-styles {
+        margin-left: 0;
+    }
+
+    .second-day-min-styles {
+        font-size: 1rem;
+    }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import Searcher from "../Searcher/Searcher";
 import Location from "../Location/Location";
 import Loader from "../Loader/Loader";
-import Weather from "../Weather/Weather";
+import Current from "../Current/Current";
 import Forecast from "../Forecast/Forecast";
 import Error from "../Error/Error";
 
@@ -13,7 +13,7 @@ function Page() {
             <Location />
             <Loader />
             <div className="row">
-                <Weather />
+                <Current />
                 <Forecast />
             </div>
             <Error />

@@ -22,6 +22,7 @@
     max-width: 270px;
     height: 15rem;
     margin-top: .9rem;
+    border-radius: var(--main-border-radius);
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 3px 6px rgba(0, 0, 0, .2);
 }

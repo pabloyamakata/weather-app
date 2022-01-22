@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { AppContext } from "../App/App";
 import useTemperature from "../../hooks/useTemperature";
 import useImage from "../../hooks/useImage";
-import './weatherStyles.css';
+import './currentStyles.css';
 
-function Weather() {
+function Current() {
     const {state: {weatherInfo, isLoading, requestErrorWasFound}} = useContext(AppContext);
     const {renderMinTemp, renderMaxTemp, renderMainTemp} = useTemperature();
     const {getMomentOfTheDay, getIconCode} = useImage();
@@ -35,4 +35,4 @@ function Weather() {
     )
 }
 
-export default Weather;
+export default Current;
