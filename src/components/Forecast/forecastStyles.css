@@ -4,11 +4,13 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 1.3rem;
+    padding-left: 0;
 }
 
 @media all and (max-width: 991px) {
     
     .forecast-container-styles {
         align-items: center;
+        padding-left: 12px;
     }
 }

@@ -16,14 +16,16 @@
 
 .third-day-dayname-styles {
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
+    font-style: italic;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
 .third-day-date-styles {
     margin-left: .5rem;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
+    font-style: italic;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
@@ -34,7 +36,7 @@
 }
 
 .third-day-main-temperature-styles {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
@@ -54,7 +56,7 @@
 .third-day-max-styles {
     margin: 0 0 0 .5rem;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
@@ -70,13 +72,31 @@
 .third-day-min-styles {
     margin: 0 0 0 .5rem;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
 .third-day-weather-icon-container-styles {
     position: relative;
     bottom: .3rem;
+}
+
+@media all and (max-width: 239px) {
+
+    .third-day-main-temperature-styles {
+        font-size: 1.3rem;    
+    }    
+}
+
+@media all and (max-width: 311px) {
+
+    .third-day-min-max-container-styles {
+        flex-direction: column;
+    }
+
+    .third-day-min-container-styles {
+        margin-left: 0;
+    }
 }
 
 @media all and (max-width: 358px) {
@@ -86,27 +106,17 @@
     }
 
     .third-day-dayname-styles {
-        font-size: 1rem;
+        font-size: 14px;
+        font-weight: 300;
     }
     
     .third-day-date-styles {
-        font-size: 1rem;
-    }
-
-    .third-day-main-temperature-styles {
-        font-size: 1rem;
-    } 
-
-    .third-day-min-max-container-styles {
-        flex-direction: column;
+        font-size: 14px;
+        font-weight: 300;
     }
 
     .third-day-max-styles {
         font-size: 1rem;
-    }
-
-    .third-day-min-container-styles {
-        margin-left: 0;
     }
 
     .third-day-min-styles {
