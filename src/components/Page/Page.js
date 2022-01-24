@@ -6,6 +6,7 @@ import Current from "../Current/Current";
 import Forecast from "../Forecast/Forecast";
 import Chart from "../Chart/Chart";
 import Error from "../Error/Error";
+import './pageStyles.css';
 
 function Page() {
     return(
@@ -13,7 +14,7 @@ function Page() {
             <Searcher />
             <Location />
             <Loader />
-            <div className="row">
+            <div className="row main-row-styles">
                 <Current />
                 <Forecast />
             </div>

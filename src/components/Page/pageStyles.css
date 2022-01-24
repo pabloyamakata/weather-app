@@ -1,0 +1,11 @@
+.main-row-styles {
+    padding-right: 6rem;
+}
+
+@media all and (max-width: 991px) {
+
+    .main-row-styles {
+        padding-right: 0;
+    }
+}
+
