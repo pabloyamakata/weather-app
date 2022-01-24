@@ -23,11 +23,11 @@ function Chart() {
                         lat: weatherInfo.location.lat, 
                         lng: weatherInfo.location.lon
                     }} 
-                    zoom={6}>
+                    zoom={9}>
                         <TileLayer 
                         attribution='&copy; 
                         <a href="https://www.openstreetmap.org/copyright">
-                        OpenStreetMap</a>contributors' 
+                        OpenStreetMap</a> contributors' 
                         url="https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png" />
                         <Marker 
                         position={{
