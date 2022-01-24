@@ -15,7 +15,7 @@ function Chart() {
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ?
 
-            <div className="row">
+            <div className="row chart-row-styles">
                 <div className="col chart-container-styles">
                     <MapContainer 
                     className="chart-styles" 
@@ -23,18 +23,19 @@ function Chart() {
                         lat: weatherInfo.location.lat, 
                         lng: weatherInfo.location.lon
                     }} 
-                    zoom={9}>
+                    zoom={6}>
                         <TileLayer 
                         attribution='&copy; 
-                        <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                        <a href="https://www.openstreetmap.org/copyright">
+                        OpenStreetMap</a>contributors' 
+                        url="https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png" />
                         <Marker 
                         position={{
                             lat: weatherInfo.location.lat, 
                             lng: weatherInfo.location.lon
                         }}>
                             <Popup className="pop-up-styles">
-                                Hey there, <br /> This is {weatherInfo.location.name}! 
+                                Hey there! <br /> You are in {weatherInfo.location.name}. 
                             </Popup>
                         </Marker>
                     </MapContainer>
