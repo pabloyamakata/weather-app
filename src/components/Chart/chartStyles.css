@@ -8,7 +8,7 @@
 
 .chart-styles {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     height: 100%;
     border-radius: var(--main-border-radius);
 }
