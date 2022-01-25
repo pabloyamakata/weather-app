@@ -4,7 +4,7 @@ import Location from "../Location/Location";
 import Loader from "../Loader/Loader";
 import Current from "../Current/Current";
 import Forecast from "../Forecast/Forecast";
-import Chart from "../Chart/Chart";
+import Map from "../Map/Map";
 import Error from "../Error/Error";
 import './pageStyles.css';
 
@@ -18,7 +18,7 @@ function Page() {
                 <Current />
                 <Forecast />
             </div>
-            <Chart />
+            <Map />
             <Error />
         </div>
     )
