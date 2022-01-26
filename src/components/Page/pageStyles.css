@@ -1,8 +1,16 @@
+.page-styles {
+    padding-bottom: 0;
+}
+
 .main-row-styles {
     padding-right: 4.5rem;
 }
 
 @media all and (max-width: 991px) {
+
+    .page-styles {
+        padding-bottom: 70px;
+    }
 
     .main-row-styles {
         padding-right: 0;

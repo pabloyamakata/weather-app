@@ -6,11 +6,12 @@ import Current from "../Current/Current";
 import Forecast from "../Forecast/Forecast";
 import Map from "../Map/Map";
 import Error from "../Error/Error";
+import Footer from "../Footer/Footer";
 import './pageStyles.css';
 
 function Page() {
     return(
-        <div>
+        <div className="page-styles">
             <Searcher />
             <Location />
             <Loader />
@@ -20,6 +21,7 @@ function Page() {
             </div>
             <Map />
             <Error />
+            <Footer />
         </div>
     )
 }
