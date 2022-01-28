@@ -1,11 +1,11 @@
-.error-container-styles {
+.errorContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 8rem;
 }
 
-.error-styles {
+.error {
     color: var(--main-text-color);
     text-align: center;
 }

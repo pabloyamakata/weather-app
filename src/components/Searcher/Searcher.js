@@ -1,17 +1,15 @@
 import React from "react";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { AppContext } from "../App/App";
 import useAxios from "../../hooks/useAxios";
-import './searcherStyles.css';
+import styles from './Searcher.module.css';
 
 function Searcher() {
     const {
         state, 
         state: {location}, 
         setState, 
-        handleLocation, 
-        handleInputFocus, 
-        handleInputBlur
+        handleLocation
     } = useContext(AppContext);
     
     const {axiosGet} = useAxios();
@@ -35,7 +33,24 @@ function Searcher() {
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.weatherInfo]);
-    
+
+    // Both methods, handleInputFocus() and handleInputBlur(), have the purpose 
+    // of giving styles to the submit button located inside the form. handleInputFocus()
+    // adds a new CSS class to the aforementioned button and provides it with a brighter 
+    // bottom border after the input has received focus. When input loses its focus, 
+    // handleInputBlur() does the opposite operation. Note that the useRef hook was 
+    // implemented to find the button in the DOM tree. 
+
+    const btn_submit = useRef();
+
+    const handleInputFocus = () => {
+        btn_submit.current.classList.add(`${styles.btnSubmitFocus}`);
+    }
+
+    const handleInputBlur = () => {
+        btn_submit.current.classList.remove(`${styles.btnSubmitFocus}`);
+    }
+
     return(
         <div className="row">
             <div className="col">
@@ -44,7 +59,7 @@ function Searcher() {
                     event.preventDefault(); 
                     axiosGet(location)
                 }} 
-                className="form-styles">
+                className={styles.form}>
                     
                     <input 
                     type='text'
@@ -52,12 +67,13 @@ function Searcher() {
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
                     placeholder="Search for location..." 
-                    className="searcher-styles" 
+                    className={styles.searcher} 
                     required />
                 
                     <button 
                     type='submit'
-                    className="searcher-submit-styles">
+                    ref={btn_submit}
+                    className={styles.btnSubmit}>
                     <i className="fas fa-search"></i>
                     </button>
                 </form>

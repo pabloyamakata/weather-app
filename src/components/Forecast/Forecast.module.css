@@ -1,4 +1,4 @@
-.forecast-container-styles {
+.forecastContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -9,7 +9,7 @@
 
 @media all and (max-width: 991px) {
     
-    .forecast-container-styles {
+    .forecastContainer {
         align-items: center;
         padding-left: 12px;
     }

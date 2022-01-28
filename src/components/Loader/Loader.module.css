@@ -1,11 +1,11 @@
-.loader-container-styles {
+.loaderContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 11rem;
 }
 
-.loader-styles {
+.loader {
     color: var(--main-text-color);
     font-size: 4rem;
 }

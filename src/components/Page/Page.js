@@ -7,15 +7,15 @@ import Forecast from "../Forecast/Forecast";
 import Map from "../Map/Map";
 import Error from "../Error/Error";
 import Footer from "../Footer/Footer";
-import './pageStyles.css';
+import styles from './Page.module.css';
 
 function Page() {
     return(
-        <div className="page-styles">
+        <div className={styles.page}>
             <Searcher />
             <Location />
             <Loader />
-            <div className="row main-row-styles">
+            <div className={`row ${styles.mainRow}`}>
                 <Current />
                 <Forecast />
             </div>

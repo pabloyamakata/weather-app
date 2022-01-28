@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 import { globalState } from "../../globalState";
 import Header from '../Header/Header';
 import Page from "../Page/Page";
-import './appStyles.css';
+import styles from './App.module.css';
 
 export const AppContext = createContext(null);
 
@@ -17,9 +17,9 @@ function App() {
 
     const renderBackground = () => {
         const max_temp = 15;
-        if(!state.weatherInfo) return 'container-fluid app-cold';
-        else if(state.weatherInfo.forecast.forecastday[0].day.avgtemp_c > max_temp) return 'container-fluid app-cold app-warm'; 
-        else return 'container-fluid app-cold';
+        if(!state.weatherInfo) return `container-fluid ${styles.cold}`;
+        else if(state.weatherInfo.forecast.forecastday[0].day.avgtemp_c > max_temp) return `container-fluid ${styles.cold} ${styles.warm}`; 
+        else return `container-fluid ${styles.cold}`;
     }
 
     // handleLocation() changes the location property on globalState.js 
@@ -32,31 +32,13 @@ function App() {
         });
     }
 
-    // Both methods, handleInputFocus() and handleInputBlur(), have the purpose 
-    // of giving styles to the submit button located inside the form. handleInputFocus()
-    // adds a new CSS class to the aforementioned button and provides it with a brighter 
-    // bottom border after the input has received focus. When input loses its focus, 
-    // handleInputBlur() does the opposite operation. 
-
-    const handleInputFocus = () => {
-        let btn_submit = document.querySelector('.searcher-submit-styles');
-        btn_submit.classList.add('searcher-submit-styles-focus');
-    }
-
-    const handleInputBlur = () => {
-        let btn_submit = document.querySelector('.searcher-submit-styles');
-        btn_submit.classList.remove('searcher-submit-styles-focus');
-    }
-
     return(
         <AppContext.Provider value={{
             state, 
             setState, 
-            handleLocation, 
-            handleInputFocus, 
-            handleInputBlur
+            handleLocation
         }}>
-            <div id="main-container" className={renderBackground()}>
+            <div id={styles.mainContainer} className={renderBackground()}>
                 <Header />
                 <Page />
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { AppContext } from '../App/App';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import './mapStyles.css';
+import styles from './Map.module.css';
 
 function Map() {
     const {
@@ -15,10 +15,10 @@ function Map() {
     return(
         weatherInfo && !isLoading && !requestErrorWasFound ?
 
-            <div className="row map-row-styles">
-                <div className="col map-container-styles">
+            <div className={`row ${styles.mapRow}`}>
+                <div className={`col ${styles.mapContainer}`}>
                     <MapContainer 
-                    className="map-styles" 
+                    className={styles.map} 
                     center={{
                         lat: weatherInfo.location.lat, 
                         lng: weatherInfo.location.lon
@@ -35,7 +35,7 @@ function Map() {
                             lat: weatherInfo.location.lat, 
                             lng: weatherInfo.location.lon
                         }}>
-                            <Popup className="pop-up-styles">
+                            <Popup className={styles.popup}>
                                 Hey there! <br /> You are in {weatherInfo.location.name}. 
                             </Popup>
                         </Marker>

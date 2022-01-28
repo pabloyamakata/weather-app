@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../App/App";
-import './errorStyles.css';
+import styles from './Error.module.css';
 
 function Error() {
     const {state: {requestErrorWasFound, isLoading}} = useContext(AppContext);
@@ -10,8 +10,8 @@ function Error() {
         requestErrorWasFound && !isLoading ?
                     
                     <div className="row">
-                        <div className="col error-container-styles">
-                            <h3 className="error-styles">Oops! There has been an error...</h3>
+                        <div className={`col ${styles.errorContainer}`}>
+                            <h3 className={styles.error}>Oops! There has been an error...</h3>
                         </div>
                     </div>
 

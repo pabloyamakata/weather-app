@@ -1,13 +1,13 @@
 import React from 'react';
-import './footerStyles.css';
+import styles from './Footer.module.css';
 
 function Footer() {
     return(
-        <footer className='row footer-row-styles'>
-            <div className='col-12 col-md-6 copyright-container-styles'>
-                <p className='copyright-styles'>&copy; 2022 Developed by Pablo Yamakata.</p>
+        <footer className={`row ${styles.footerRow}`}>
+            <div className={`col-12 col-md-6 ${styles.copyrightContainer}`}>
+                <p className={styles.copyright}>&copy; 2022 Developed by Pablo Yamakata.</p>
             </div>
-            <nav className='col-12 col-md-6 social-media-container-styles'>
+            <nav className={`col-12 col-md-6 ${styles.socialMediaContainer}`}>
                 <ul className="nav">
                     <li className="nav-item">
                         <a

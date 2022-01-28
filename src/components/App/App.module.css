@@ -1,11 +1,11 @@
-#main-container {
+#mainContainer {
     position: relative;
     min-height: 100vh;
     padding-bottom: 2.5rem;
     z-index: 1;
 }
 
-#main-container::after {
+#mainContainer::after {
     content: '';
     position: absolute;
     left: 0;
@@ -16,11 +16,7 @@
     z-index: -1;
 }
 
-.container-dimensions {
-    min-height: 100vh;
-}
-
-.app-cold {
+.cold {
     background-image: var(--cold-bg-image);
     background-size: cover;
     background-position: bottom;
@@ -28,7 +24,7 @@
     transition: .5s ease;
 }
 
-.app-warm {
+.warm {
     background-image: var(--warm-bg-image);
 }
 
@@ -46,7 +42,7 @@
 */
 
 @media all and (max-width: 991px) {
-    #main-container {
+    #mainContainer {
         padding-bottom: 2rem;
     }
 }

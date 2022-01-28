@@ -1,4 +1,4 @@
-.second-day-container-styles {
+.mainContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -9,18 +9,18 @@
     box-shadow: 3px 6px rgba(0, 0, 0, .2);
 }
 
-.second-day-date-container-styles {
+.dateContainer {
     width: fit-content;
 }
 
-.second-day-dayname-styles {
+.dayName {
     font-size: 1.1rem;
     font-weight: 500;
     font-style: italic;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
-.second-day-date-styles {
+.date {
     margin-left: .5rem;
     font-size: 1.1rem;
     font-weight: 500;
@@ -28,99 +28,101 @@
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
-.second-day-weather-data-container-styles {
+.weatherData {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.second-day-main-temperature-styles {
+.mainTemperature {
     font-size: 1.6rem;
     font-weight: 700;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
-.second-day-min-max-container-styles {
+.minMaxContainer {
     display: flex;
 }
 
-.second-day-max-container-styles {
+.maxContainer {
     display: flex;
 }
 
-.fa-angle-double-up {
+.arrowUp {
     align-self: center;
 }
 
-.second-day-max-styles {
+.maxTemperature {
     margin: 0 0 0 .5rem;
     font-size: 1.3rem;
     font-weight: 500;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
-.second-day-min-container-styles {
+.minContainer {
     display: flex;
     margin-left: 1.4rem;
 }
 
-.fa-angle-double-down {
+.arrowDown {
     align-self: center;
 }
 
-.second-day-min-styles {
+.minTemperature {
     margin: 0 0 0 .5rem;
     font-size: 1.3rem;
     font-weight: 500;
     text-shadow: 3px 3px rgba(50, 50, 70, .5);
 }
 
-.second-day-weather-icon-container-styles {
+.IconContainer {
     position: relative;
     bottom: .3rem;
 }
 
 @media all and (max-width: 239px) {
 
-    .second-day-main-temperature-styles {
+    .mainTemperature {
         font-size: 1.3rem;    
     }    
 }
 
 @media all and (max-width: 311px) {
 
-    .second-day-min-max-container-styles {
+    .minMaxContainer {
         flex-direction: column;
     }
 
-    .second-day-min-container-styles {
+    .minContainer {
         margin-left: 0;
     }
 }
 
 @media all and (max-width: 358px) {
 
-    .second-day-container-styles {
+    .mainContainer {
         padding: .5rem .4rem 0 .8rem;
     }
 
-    .second-day-dayname-styles {
+    .dayName {
         font-size: 14px;
         font-weight: 300;
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
     
-    .second-day-date-styles {
+    .date {
         font-size: 14px;
         font-weight: 300;
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 
-    .second-day-max-styles {
+    .maxTemperature {
         font-size: 1rem;
-        text-shadow: 2px 2px rgba(50, 50, 70, .5);
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 
-    .second-day-min-styles {
+    .minTemperature {
         font-size: 1rem;
-        text-shadow: 2px 2px rgba(50, 50, 70, .5);
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 }
