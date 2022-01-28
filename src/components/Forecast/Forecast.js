@@ -1,8 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../App/App";
-import Second from "./Days/Second";
-import Third from "./Days/Third";
+import Days from "./Days/Days";
 import styles from './Forecast.module.css';
 
 function Forecast() {
@@ -11,8 +10,8 @@ function Forecast() {
         weatherInfo && !isLoading && !requestErrorWasFound ? 
 
             <div className={`col-12 col-lg-6 ${styles.forecastContainer}`}>
-                <Second />
-                <Third />
+                <Days day={1} marginTop={{marginTop: 0}} />
+                <Days day={2} marginTop={{marginTop: '.8rem'}} />
             </div>
 
         : null
