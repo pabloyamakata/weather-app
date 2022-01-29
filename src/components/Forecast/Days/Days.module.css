@@ -107,22 +107,37 @@
     .dayName {
         font-size: 14px;
         font-weight: 300;
-        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
     
     .date {
         font-size: 14px;
         font-weight: 300;
-        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 
     .maxTemperature {
         font-size: 1rem;
-        text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 
     .minTemperature {
         font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 530px) {
+
+    .dayName {
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
+    }
+    
+    .date {
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
+    }
+
+    .maxTemperature {
+        text-shadow: 1px 1px rgba(50, 50, 70, .5);
+    }
+
+    .minTemperature {
         text-shadow: 1px 1px rgba(50, 50, 70, .5);
     }
 }
