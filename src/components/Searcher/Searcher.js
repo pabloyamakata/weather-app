@@ -5,14 +5,9 @@ import useAxios from "../../hooks/useAxios";
 import styles from './Searcher.module.css';
 
 function Searcher() {
-    const {
-        state, 
-        state: {location}, 
-        setState, 
-        handleLocation
-    } = useContext(AppContext);
+    const { state: { location }, handleLocation } = useContext(AppContext);
     
-    const {axiosGet} = useAxios();
+    const { axiosGet } = useAxios();
 
     // This function sends a GET request to weatherapi API on first 
     // render. It takes user's IP address as main parameter in order
@@ -23,17 +18,6 @@ function Searcher() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
-    // This function sets isLoading property to false and deactivates 
-    // the loader after the request to weatherapi API has been successful.
-    
-    useEffect(() => {
-        setState({
-            ...state,
-            isLoading: false
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [state.weatherInfo]);
-
     // Both methods, handleInputFocus() and handleInputBlur(), have the purpose 
     // of giving styles to the submit button located inside the form. handleInputFocus()
     // adds a new CSS class to the aforementioned button and provides it with a brighter 
@@ -57,7 +41,7 @@ function Searcher() {
                 <form 
                 onSubmit={event => {
                     event.preventDefault(); 
-                    axiosGet(location)
+                    axiosGet(location);
                 }} 
                 className={styles.form}>
                     

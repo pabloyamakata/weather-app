@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../components/App/App";
 
 function useImage() {
-    const {state: {weatherInfo}} = useContext(AppContext);
+    const { state: { weatherInfo } } = useContext(AppContext);
 
     const getMomentOfTheDay = () => {
         const isDay = weatherInfo.current.is_day;
@@ -26,7 +26,7 @@ function useImage() {
         }
     }
 
-    return {getMomentOfTheDay, getIconCode};
+    return { getMomentOfTheDay, getIconCode };
 }
 
 export default useImage;

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../components/App/App";
 
 function useDate() {
-    const {state: {weatherInfo}} = useContext(AppContext);
+    const { state: { weatherInfo } } = useContext(AppContext);
     
     const days = [
         'Sunday', 'Monday', 'Tuesday', 'Wednesday', 
@@ -42,7 +42,7 @@ function useDate() {
         return year;
     }
 
-    return {renderDay, renderDate, renderMonth, renderYear};
+    return { renderDay, renderDate, renderMonth, renderYear };
 }
 
 export default useDate;

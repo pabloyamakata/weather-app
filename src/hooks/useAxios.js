@@ -25,18 +25,19 @@ function useAxios() {
                 setState({
                     ...state,
                     weatherInfo: response.data,
-                    requestErrorWasFound: false
+                    requestErrorWasFound: false,
+                    isLoading: false
                 });
             }).catch(() => {
             setState({
                 ...state,
-                isLoading: false,
-                requestErrorWasFound: true
+                requestErrorWasFound: true,
+                isLoading: false
             });
         });
     }
 
-    return {axiosGet};
+    return { axiosGet };
 }
 
 export default useAxios;
