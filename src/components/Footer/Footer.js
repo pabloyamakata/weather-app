@@ -2,10 +2,15 @@ import React from 'react';
 import styles from './Footer.module.css';
 
 function Footer() {
+    const getYear = () => {
+        const date = new Date();
+        const year = date.getFullYear();
+        return year;
+    }
     return(
         <footer className={`row ${styles.footerRow}`}>
             <div className={`col-12 col-md-6 ${styles.copyrightContainer}`}>
-                <p className={styles.copyright}>&copy; 2022 Developed by Pablo Yamakata.</p>
+                <p className={styles.copyright}>&copy; {getYear()} Developed by Pablo Yamakata.</p>
             </div>
             <nav className={`col-12 col-md-6 ${styles.socialMediaContainer}`}>
                 <ul className="nav">
