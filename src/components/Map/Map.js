@@ -29,8 +29,7 @@ function Map() {
                         <a href="https://www.openstreetmap.org/copyright">
                         OpenStreetMap</a> contributors' 
                         url="https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png" />
-                        <Marker
-                        draggable={true} 
+                        <Marker 
                         position={{
                             lat: weatherInfo.location.lat, 
                             lng: weatherInfo.location.lon
