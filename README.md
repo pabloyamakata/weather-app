@@ -1,6 +1,7 @@
 <h3>Aplicación del Clima</h3>
 
-Provee información del clima en tiempo real para distintas localizaciones alrededor del mundo haciendo uso de la API de WeatherAPI.com.<br> 
+Provee información del clima en tiempo real para distintas localizaciones alrededor del mundo haciendo uso de la API de WeatherAPI.com
+
 Las tecnologías utilizadas en este proyecto son:
 
 <ul>
@@ -20,7 +21,8 @@ Las tecnologías utilizadas en este proyecto son:
 
 <h3>Weather Application</h3>
 
-Provides real-time weather information for different locations around the world using the WeatherAPI.com API.<br>
+Provides real-time weather information for different locations around the world using the WeatherAPI.com API
+
 The technologies used in this project are:
 
 <ul>
